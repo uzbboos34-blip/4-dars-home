@@ -16,7 +16,7 @@ export class BedRequestError extends Error {
 }
 
 export class NotFoundError extends Error {
-    constructor(status, message) {
+    constructor(status,message) {
         super()
         this.status = status
         this.message = message
@@ -24,7 +24,7 @@ export class NotFoundError extends Error {
     }
 }
 
-export class ConflicError extends Error {
+export class ConflictError extends Error {
     constructor(status, message) {
         super()
         this.status = status
@@ -42,12 +42,12 @@ export class ForBiddenError extends Error {
     }
 }
 
-export class Unauthorized extends Error {
+export class UnauthorizedError extends Error {
     constructor(status,message) {
         super()
         this.status = status
         this.message = message
-        this.name = "Unauthorized"
+        this.name = "UnauthorizedError"
     }
 }
 

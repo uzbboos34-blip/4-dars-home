@@ -16,7 +16,7 @@ async function db_connect() {
         await pool.connect()
         console.log("✅ Database connected!");
     } catch (error) {
-          console.log(error);
+        console.log(error);
     }
 }
 db_connect()
