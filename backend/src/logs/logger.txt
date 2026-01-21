@@ -1,0 +1,31 @@
+[2026-01-20T10:13:30.606Z]--POST--/api/messages/1--TypeError: Cannot destructure property 'message' of 'req.body' as it is undefined.
+[2026-01-20T10:16:26.422Z]--POST--/api/messages/1--TypeError: Cannot destructure property 'file' of 'req.files' as it is undefined.
+[2026-01-20T10:22:42.964Z]--POST--/api/messages/1--TypeError: Cannot read properties of undefined (reading 'mv')
+[2026-01-20T10:24:21.165Z]--POST--/api/messages/1--TypeError: Cannot read properties of undefined (reading 'mv')
+[2026-01-20T13:05:16.937Z]--POST--/api/messages/3--TypeError: Cannot read properties of undefined (reading '0')
+[2026-01-20T13:05:46.810Z]--POST--/api/messages/3--TypeError: Cannot read properties of undefined (reading '0')
+[2026-01-20T13:08:09.167Z]--POST--/api/messages/3--TypeError: Cannot read properties of undefined (reading '0')
+[2026-01-20T13:08:39.574Z]--POST--/api/messages/3--TypeError: Cannot read properties of undefined (reading '0')
+[2026-01-20T13:08:40.470Z]--POST--/api/messages/3--TypeError: Cannot read properties of undefined (reading '0')
+[2026-01-20T13:08:40.683Z]--POST--/api/messages/3--TypeError: Cannot read properties of undefined (reading '0')
+[2026-01-20T13:08:40.848Z]--POST--/api/messages/3--TypeError: Cannot read properties of undefined (reading '0')
+[2026-01-20T13:08:41.000Z]--POST--/api/messages/3--TypeError: Cannot read properties of undefined (reading '0')
+[2026-01-20T13:08:41.152Z]--POST--/api/messages/3--TypeError: Cannot read properties of undefined (reading '0')
+[2026-01-20T13:08:41.284Z]--POST--/api/messages/3--TypeError: Cannot read properties of undefined (reading '0')
+[2026-01-20T13:08:41.416Z]--POST--/api/messages/3--TypeError: Cannot read properties of undefined (reading '0')
+[2026-01-20T13:08:41.532Z]--POST--/api/messages/3--TypeError: Cannot read properties of undefined (reading '0')
+[2026-01-20T13:14:37.723Z]--POST--/api/messages/3--TypeError: Cannot read properties of undefined (reading '0')
+[2026-01-20T13:21:08.985Z]--POST--/api/messages/3--TypeError: Cannot read properties of undefined (reading '0')
+[2026-01-20T13:22:05.250Z]--POST--/api/messages/3--TypeError: Cannot read properties of undefined (reading '0')
+[2026-01-20T13:23:17.732Z]--POST--/api/messages/3--TypeError: Cannot read properties of undefined (reading '0')
+[2026-01-20T13:23:59.002Z]--POST--/api/messages/3--TypeError: Cannot read properties of undefined (reading '0')
+[2026-01-21T03:57:24.042Z]--POST--/api/messages/undefined--error: invalid input syntax for type integer: "undefined"
+[2026-01-21T03:57:42.026Z]--POST--/api/messages/undefined--error: invalid input syntax for type integer: "undefined"
+[2026-01-21T04:21:41.346Z]--POST--/api/messages/undefined--error: invalid input syntax for type integer: "undefined"
+[2026-01-21T04:21:42.760Z]--POST--/api/messages/undefined--error: invalid input syntax for type integer: "undefined"
+[2026-01-21T04:21:43.623Z]--POST--/api/messages/undefined--error: invalid input syntax for type integer: "undefined"
+[2026-01-21T04:21:43.835Z]--POST--/api/messages/undefined--error: invalid input syntax for type integer: "undefined"
+[2026-01-21T04:21:44.029Z]--POST--/api/messages/undefined--error: invalid input syntax for type integer: "undefined"
+[2026-01-21T04:21:44.217Z]--POST--/api/messages/undefined--error: invalid input syntax for type integer: "undefined"
+[2026-01-21T04:21:44.380Z]--POST--/api/messages/undefined--error: invalid input syntax for type integer: "undefined"
+[2026-01-21T04:21:44.872Z]--POST--/api/messages/undefined--error: invalid input syntax for type integer: "undefined"

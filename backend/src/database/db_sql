@@ -1,0 +1,27 @@
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(50)  NOT NULL,
+    email VARCHAR(255),
+    password VARCHAR(255) NOT NULL,
+    avatar VARCHAR(255),
+    socket_id VARCHAR(255)
+);
+
+CREATE TABLE files (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    user_id INT REFERENCES users(id) ON DELETE CASCADE,
+    file_name VARCHAR(255) NOT NULL,
+    size VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT (CURRENT_TIMESTAMP)
+);
+
+CREATE Table messages (
+    id SERIAL PRIMARY KEY,
+    message_type TEXT NOT NULL,
+    message TEXT NOT NULL,
+    user_id_to INT REFERENCES users(id) ON DELETE CASCADE,
+    user_id_from INT REFERENCES users(id) ON DELETE CASCADE,
+    created_at TIMESTAMP DEFAULT (CURRENT_TIMESTAMP)
+);
+

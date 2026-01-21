@@ -1,1 +1,0 @@
-[2026-01-12T04:26:24.614Z]--GET--/api/files/users?search=a--error: bind message supplies 1 parameters, but prepared statement "" requires 2
