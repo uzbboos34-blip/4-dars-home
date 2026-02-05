@@ -15,14 +15,16 @@ function startServers() {
   backend = spawn('npm', ['run', 'dev'], {
     cwd: path.join(__dirname, 'backend'),
     stdio: 'inherit',
-    shell: true
+    shell: true,
+    env: { ...process.env, PORT: process.env.BACKEND_PORT || 4545 }
   });
 
   // Frontend ishga tushirish
   frontend = spawn('npm', ['run', 'dev'], {
     cwd: path.join(__dirname, 'frontend'),
     stdio: 'inherit',
-    shell: true
+    shell: true,
+    env: { ...process.env, PORT: process.env.FRONTEND_PORT || 9090 }
   });
 
   // Process xatolarini boshqarish
