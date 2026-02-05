@@ -12,6 +12,6 @@
   "type": "module",
   "dependencies": {
     "express": "^5.2.1",
-    "express-http-proxy": "^1.6.14"
+    "http-proxy-middleware": "^2.0.6"
   }
 }
