@@ -2,7 +2,7 @@ const token = window.localStorage.getItem("accessToken")
 // if (!token) {
 //     window.location = "/register"
 // }
-const socket = io("http://localhost:4545", {
+const socket = io(BASE_URL.replace('/backend', ''), {
     auth:{
         headers:token
     },
@@ -21,17 +21,17 @@ const chatHeader = document.querySelector(".chat-header")
 
 const avatar = window.localStorage.getItem("avatar")
 list.innerHTML += `
-        <img class="avatar-img" src="http://localhost:4545/file/${avatar}" alt="avatar-img" width="32px" height="32px">
+        <img class="avatar-img" src="${BASE_URL}/file/${avatar}" alt="avatar-img" width="32px" height="32px">
 `
 async function getUser() {
-        let res = await axios.get("http://localhost:4545/api/users");
+        let res = await axios.get(`${BASE_URL}/api/users`);
         let users = res.data.data || [];
 
         for (const user of users) {
             navbarList.innerHTML += `
             <li onclick= "clickUser(${user.id}, '${user.username}', '${user.avatar}')" class="channel" data-user-id="${user.id}">
                 <a href="#">
-                    <img src="http://localhost:4545/file/${user.avatar}" alt="channel-icon" width="30px" height="30px">
+                    <img src="${BASE_URL}/file/${user.avatar}" alt="channel-icon" width="30px" height="30px">
                     <span>${user.username}</span>
                 </a>
             </li>`;
@@ -79,14 +79,14 @@ inputSearch.onkeydown = (e) => {
 }
 
 async function getAllFiles() {
-    let files = await axios.get(`http://localhost:4545/api/files/users?search=${search}`); 
+    let files = await axios.get(`${BASE_URL}/api/files/users?search=${search}`); 
     files = files.data.user
     
 
         for (const file of files) {
             iframesList.innerHTML +=`
                 <li class="iframe">
-                    <video src="http://localhost:4545/file/${file.file_name}" controls="" 
+                    <video src="${BASE_URL}/file/${file.file_name}" controls="" 
                         style="
                             width: 320px;
                             height: 250px;
@@ -94,12 +94,12 @@ async function getAllFiles() {
                             margin-left: 20px;
                             border: 1px solid #ddd;"></video>
                     <div class="iframe-footer">
-                        <img src="http://localhost:4545/file/${file.user.avatar}" alt="channel-icon">
+                        <img src="${BASE_URL}/file/${file.user.avatar}" alt="channel-icon">
                         <div class="iframe-footer-text">
                             <h2 class="channel-name">${file.user.username}</h2>
                             <h3 class="iframe-title">${file.title}</h3>
                             <time class="uploaded-time">${file.created_at}</time>
-                            <a class="download" href="http://localhost:4545/api/file/download/${file.file_name}">
+                            <a class="download" href="${BASE_URL}/api/file/download/${file.file_name}">
                                 <span>${file.size} MB</span>
                                 <img src="./img/download.png">
                             </a>
@@ -111,7 +111,7 @@ async function getAllFiles() {
 }
 
 async function getAllUserFiles(id) {
-        let res = await axios.get(`http://localhost:4545/api/files/oneUser/${id}`);
+        let res = await axios.get(`${BASE_URL}/api/files/oneUser/${id}`);
         let files = res.data.files || [];
         
         
@@ -121,19 +121,19 @@ async function getAllUserFiles(id) {
         for (const file of files) {
             iframesList.innerHTML +=`
                 <li class="iframe">
-                    <video src="http://localhost:4545/file/${file.file_name}" controls=""style="
+                    <video src="${BASE_URL}/file/${file.file_name}" controls=""style="
                             width: 320px;
                             height: 250px;
                             border-radius: 15px;
                             margin-left: 20px;
                             border: 1px solid #ddd;"></video>
                     <div class="iframe-footer">
-                        <img src="http://localhost:4545/file/${file.user.avatar}" alt="channel-icon">
+                        <img src="${BASE_URL}/file/${file.user.avatar}" alt="channel-icon">
                         <div class="iframe-footer-text">
                             <h2 class="channel-name">${file.user.username}</h2>
                             <h3 class="iframe-title">${file.title}</h3>
                             <time class="uploaded-time">${file.created_at}</time>
-                            <a class="download" href="http://localhost:4545/api/file/${file.file_name}">
+                            <a class="download" href="${BASE_URL}/api/file/${file.file_name}">
                                 <span>${file.size} MB</span>
                                 <img src="./img/download.png">
                             </a>
@@ -147,12 +147,12 @@ async function getAllUserFiles(id) {
 async function clickUser(userIdTo, username, avatar){
     
     chatHeader.innerHTML =  `
-    <img id="chatUserAvatar" src="http://localhost:4545/file/${avatar}"> 
+    <img id="chatUserAvatar" src="${BASE_URL}/file/${avatar}"> 
                     <span id="chatUserName">${username}</span> `
 
     lastUserId = userIdTo
     chatBody.innerHTML = null
-    let messages = await axios.get("http://localhost:4545/api/messages/" + userIdTo, {
+    let messages = await axios.get(`${BASE_URL}/api/messages/` + userIdTo, {
         headers: {token:token}
     })
     messages =  messages.data.message
@@ -164,13 +164,13 @@ async function clickUser(userIdTo, username, avatar){
             if (message.user_id_to == userIdTo) {
                 chatBody.innerHTML += `
                 <div class = "message me">
-                    <img src="http://localhost:4545/file/${message.message}?media=true" width= 150 height= 100>
+                    <img src="${BASE_URL}/file/${message.message}?media=true" width= 150 height= 100>
                 </div>
             `
             }else{
                 chatBody.innerHTML += `
                 <div class = "message other">
-                    <img src="http://localhost:4545/file/${message.message}?media=true" width= 150 height= 100>
+                    <img src="${BASE_URL}/file/${message.message}?media=true" width= 150 height= 100>
                 </div>
                 `
             }
@@ -211,7 +211,7 @@ async function sendMessage() {
         
         
 
-        const res =  await axios.post("http://localhost:4545/api/messages/" + lastUserId,
+        const res =  await axios.post(`${BASE_URL}/api/messages/` + lastUserId,
             fromdata,
             {
                 headers: {
@@ -231,7 +231,7 @@ async function sendMessage() {
         chatInput.value = ""
         
     }else{
-        const res =  await axios.post("http://localhost:4545/api/messages/" + lastUserId,
+        const res =  await axios.post(`${BASE_URL}/api/messages/` + lastUserId,
         {
             message: chatInput.value
         },
@@ -275,7 +275,7 @@ socket.on("send_message", (msg, mimetype) => {
     if (file != "plan") {
         chatBody.innerHTML += `
             <div class = "message other">
-                <img src="http://localhost:4545/file/${msg.rows[0].message}?media=true" width= 150 height= 100>
+                <img src="${BASE_URL}/file/${msg.rows[0].message}?media=true" width= 150 height= 100>
             </div>
             `
     }else{

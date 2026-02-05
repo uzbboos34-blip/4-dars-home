@@ -2,7 +2,7 @@ const token = window.localStorage.getItem("accessToken")
 if (!token) {
     window.location = "/register"
 }
-const socket = io("http://localhost:4545", {
+const socket = io(BASE_URL.replace('/backend', ''), {
     auth:{
         headers:token
     },
@@ -20,7 +20,7 @@ async function register(e) {
         formData.append("password", passwordInput.value)
         formData.append("file", uploadInput.files[0])        
 
-        const newUser = await axios.post("http://localhost:4545/api/register",formData)
+        const newUser = await axios.post(`${BASE_URL}/api/register`,formData)
         console.log(newUser);
         
 
@@ -55,7 +55,7 @@ sendOtp.onclick = async () => {
 
 
     try {
-        const res = await axios.post("http://localhost:4545/send", { email });
+        const res = await axios.post(`${BASE_URL}/send`, { email });
 
         if (res.status == 200) {
             alert("Kod yuborildi!");

@@ -11,7 +11,7 @@ async function admin(e) {
         fromData.append("title", videoInput.value)
         fromData.append("file", uploadInput.files[0])
 
-        await axios.post("http://localhost:4545/api/files",fromData,
+        await axios.post(`${BASE_URL}/api/files`,fromData,
             {
                 headers: {token:token}
             }
@@ -27,7 +27,7 @@ async function admin(e) {
 }
 
 async function Videos() {
-    const files = await axios.get("http://localhost:4545/api/files/userfiles",
+    const files = await axios.get(`${BASE_URL}/api/files/userfiles`,
         {
             headers: {token:token}
         }
@@ -38,11 +38,11 @@ async function Videos() {
                 <li class="video-item">
                     <video 
                         controls 
-                        src="http://localhost:4545/file/${file.file_name}">
+                        src="${BASE_URL}/file/${file.file_name}">
                     </video>
                     <img 
                     class="delete-icon" 
-                    src ="http://localhost:4545/file/delete.png"
+                    src ="${BASE_URL}/file/delete.png"
                     width = "25"
                     onclick="deleteVideo(${file.id})">
                     
@@ -54,7 +54,7 @@ async function Videos() {
 
 async function deleteVideo(id) {
     try {
-        const res = await axios.delete(`http://localhost:4545/api/files/${id}`,{
+        const res = await axios.delete(`${BASE_URL}/api/files/${id}`,{
         headers: {token:token}
         })
         console.log(res);

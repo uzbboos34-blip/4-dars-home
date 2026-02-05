@@ -2,7 +2,7 @@ const token = window.localStorage.getItem("accessToken")
 if (!token) {
     window.location = "/register"
 }
-const socket = io("http://localhost:4545", {
+const socket = io(BASE_URL.replace('/backend', ''), {
     auth:{
         headers:token
     },
@@ -16,7 +16,7 @@ async function login(e) {
     fromData.append("username", usernameInput.value)
     fromData.append("password", passwordInput.value)
 
-    const user = await axios.post("http://localhost:4545/api/login", fromData)
+    const user = await axios.post(`${BASE_URL}/api/login`, fromData)
     console.log(user);
     
     if (user.data.status == 200) {

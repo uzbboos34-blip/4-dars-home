@@ -21,8 +21,25 @@ config({
 
 const server = express()
 
+// CORS sozlamalari
+const allowedOrigins = [
+  'http://localhost:3000',
+  'http://localhost:9090',
+  'http://localhost:4545',
+  'https://four-dars-home.onrender.com'
+];
+
+server.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('CORS'));
+    }
+  }
+}))
+
 server.use(express.json())
-server.use(cors())
 server.use(fileUpload())
 
 server.use(indexRouter.userRouter)
