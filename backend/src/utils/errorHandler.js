@@ -1,7 +1,7 @@
 import { join } from "path";
 import fs from "fs";
 export default (error, req, res, next)=>{
-    if (error.status && error.status < 500) {
+    if (s) {
         return res.status(error.status).json({
             status:error.status,
             message:error.message,
@@ -16,3 +16,4 @@ export default (error, req, res, next)=>{
         })
     }
 }
+

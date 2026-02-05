@@ -29,3 +29,25 @@
 [2026-01-21T04:21:44.217Z]--POST--/api/messages/undefined--error: invalid input syntax for type integer: "undefined"
 [2026-01-21T04:21:44.380Z]--POST--/api/messages/undefined--error: invalid input syntax for type integer: "undefined"
 [2026-01-21T04:21:44.872Z]--POST--/api/messages/undefined--error: invalid input syntax for type integer: "undefined"
+[2026-01-21T09:52:01.230Z]--POST--/api/messages/1--TypeError: Cannot read properties of undefined (reading 'message')
+[2026-01-21T09:52:01.232Z]--POST--/api/messages/1--TypeError: Cannot read properties of undefined (reading 'message')
+[2026-01-21T09:52:01.249Z]--POST--/api/messages/1--TypeError: Cannot read properties of undefined (reading 'message')
+[2026-01-21T09:52:01.249Z]--POST--/api/messages/1--TypeError: Cannot read properties of undefined (reading 'message')
+[2026-01-21T09:52:01.249Z]--POST--/api/messages/1--TypeError: Cannot read properties of undefined (reading 'message')
+[2026-01-21T09:52:01.249Z]--POST--/api/messages/1--TypeError: Cannot read properties of undefined (reading 'message')
+[2026-01-22T03:52:46.523Z]--POST--/send--Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-48048b49880sm20372545e9.11 - gsmtp
+[2026-01-22T03:53:01.245Z]--POST--/send--Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-480470cc278sm32052675e9.12 - gsmtp
+[2026-01-22T03:55:12.488Z]--POST--/send--Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials ffacd0b85a97d-43569921df9sm42367391f8f.3 - gsmtp
+[2026-01-22T03:56:11.261Z]--POST--/send--Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-4804704087asm32723495e9.6 - gsmtp
+[2026-01-22T03:59:37.115Z]--POST--/send--Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 38308e7fff4ca-385c8d12506sm1416931fa.15 - gsmtp
+[2026-01-22T03:59:43.899Z]--POST--/send--Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 2adb3069b0e04-59baf34dd67sm5134677e87.29 - gsmtp
+[2026-01-22T04:00:18.640Z]--POST--/send--Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 38308e7fff4ca-38384f8598fsm49561861fa.33 - gsmtp
+[2026-01-22T04:05:24.326Z]--POST--/send--Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-4804704087asm33152605e9.6 - gsmtp

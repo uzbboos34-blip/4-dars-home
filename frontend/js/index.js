@@ -209,6 +209,7 @@ async function sendMessage() {
         const fromdata = new FormData()
         fromdata.append("file",mediaInput.files[0])
         
+        
 
         const res =  await axios.post("http://localhost:4545/api/messages/" + lastUserId,
             fromdata,
@@ -220,11 +221,11 @@ async function sendMessage() {
         )
         
         if (res.status == 201) {
-            chatBody.innerHTML += `
-                <div class = "message me">
-                    <img src="http://localhost:4545/file/${mediaInput.files[0]}?media=true" width= 150 height= 100>
-                </div>
-                `
+            // chatBody.innerHTML += `
+            //     <div class = "message me">
+            //         <img src="http://localhost:4545/file/${filename}?media=true" width= 150 height= 100>
+            //     </div>
+            //     `
         }
         
         chatInput.value = ""

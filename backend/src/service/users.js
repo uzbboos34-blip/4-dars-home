@@ -58,7 +58,7 @@ class UserService {
     async login(body){
         const {username, password} = body
 
-         const existUser = await pool.query("select * from users where username=$1", [username])
+        const existUser = await pool.query("select * from users where username=$1", [username])
 
         if (!existUser.rows.length) {
             throw new BedRequestError(400, "Username or password wrong")
