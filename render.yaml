@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: 4-dars-app
+    name: 4-dars-main
     env: node
     buildCommand: npm install && cd backend && npm install && cd ../frontend && npm install
     startCommand: npm start
@@ -9,3 +9,16 @@ services:
         value: production
       - key: PORT
         value: 10000
+      - key: BACKEND_PORT
+        value: 4545
+  
+  - type: background
+    name: 4-dars-backend
+    env: node
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm run dev
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 4545

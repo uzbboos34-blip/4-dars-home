@@ -4,7 +4,8 @@
   "description": "Frontend va Backend birga ishga tushuvchi asosiy fayl",
   "main": "main.js",
   "scripts": {
-    "start": "npm install && node main.js"
+    "start": "node main.js",
+    "dev": "npm install && node main.js"
   },
   "keywords": [],
   "author": "",
