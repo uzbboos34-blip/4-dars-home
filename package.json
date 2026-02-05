@@ -1,0 +1,13 @@
+{
+  "name": "main-project",
+  "version": "1.0.0",
+  "description": "Frontend va Backend birga ishga tushuvchi asosiy fayl",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}
