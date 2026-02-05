@@ -54,9 +54,8 @@ function startServers() {
 
 // Reverse Proxy sozlamalari
 if (IS_PRODUCTION) {
-  // Production: backend ga proxy, frontend static fayllarni serve
-  app.use(express.static(path.join(__dirname, 'frontend', 'public')));
-  app.use(express.static(path.join(__dirname, 'frontend', 'html')));
+  // Production: frontend barcha static fayllarni serve
+  app.use(express.static(path.join(__dirname, 'frontend')));
   
   // Frontend HTML fayllarni serve qil
   app.get('/', (req, res) => {
